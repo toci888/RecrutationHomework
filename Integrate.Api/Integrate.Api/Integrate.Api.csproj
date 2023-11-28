@@ -12,4 +12,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integrate.Bll\Integrate.Bll.csproj" />
+    <ProjectReference Include="..\..\Integrate.Common.Interfaces\Integrate.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Integrate.Common\Integrate.Common.csproj" />
+    <ProjectReference Include="..\..\Integrate.Database.Persistence\Integrate.Database.Persistence.csproj" />
+    <ProjectReference Include="..\..\Integrate.Models\Integrate.Models.csproj" />
+  </ItemGroup>
+
 </Project>

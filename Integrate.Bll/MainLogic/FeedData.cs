@@ -9,6 +9,7 @@ namespace Integrate.Bll.MainLogic
 
         protected ProductsCsvReader ProductsCsvReader = new ProductsCsvReader();
         protected InventoryCsvReader InventoryCsvReader = new InventoryCsvReader();
+        protected PricesCsvReader PricesCsvReader = new PricesCsvReader();
 
         public FeedData() { }
 
@@ -19,10 +20,11 @@ namespace Integrate.Bll.MainLogic
 
         public virtual bool RunParses()
         {
-           // DownloadFiles();
+            DownloadFiles();
 
             ProductsCsvReader.ParseFile();
             InventoryCsvReader.ParseFile();
+            PricesCsvReader.ParseFile();
 
             return true;
         }
