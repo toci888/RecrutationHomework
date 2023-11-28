@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Integrate.Common.Interfaces\Integrate.Common.Interfaces.csproj" />
     <ProjectReference Include="..\Integrate.Models\Integrate.Models.csproj" />
   </ItemGroup>

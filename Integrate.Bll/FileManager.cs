@@ -19,6 +19,12 @@ namespace Integrate.Bll
             FileDownload = fileDownload;
         }
 
-
+        public async void Download()
+        {
+            foreach (DownloadFileModel file in FilesToDownload)
+            {
+                await FileDownload.DownloadHttpFile(file.FileUrl, file.FileName);
+            }
+        }
     }
 }

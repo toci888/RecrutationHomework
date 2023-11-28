@@ -10,16 +10,31 @@ namespace Integrate.Bll.Parsing
     {
         protected Dictionary<string, Func<string[], TCsvModel, TCsvModel>> ParsingMap;
 
-        public virtual TCsvModel Parse(string[] csvLine)
+        public virtual TCsvModel ParseCsvLine(string[] csvLine)
         {
             TCsvModel model = new TCsvModel();
 
-            foreach (KeyValuePair<string, Func<string[], TCsvModel, TCsvModel>> parseEntry in ParsingMap)
+            csvLine = SkipQuoting(csvLine);
+
+            if (csvLine.Length > 0)
             {
-                model = parseEntry.Value(csvLine, model);
+                foreach (KeyValuePair<string, Func<string[], TCsvModel, TCsvModel>> parseEntry in ParsingMap)
+                {
+                    model = parseEntry.Value(csvLine, model);
+                }
             }
 
             return model;
+        }
+
+        private string[] SkipQuoting(string[] values) 
+        {
+            for(int i = 0; i < values.Length; i++)
+            {
+                values[i] = values[i].Replace("\"", "");
+            }
+
+            return values;
         }
     }
 }
