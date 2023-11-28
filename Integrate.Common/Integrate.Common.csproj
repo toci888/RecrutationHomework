@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Integrate.Common.Interfaces\Integrate.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\Integrate.Models\Integrate.Models.csproj" />
+  </ItemGroup>
+
+</Project>
